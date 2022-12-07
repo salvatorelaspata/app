@@ -120,6 +120,11 @@
           "target": ["parametrica"]
         },
         {
+          "pattern": "detail/{id}",
+          "name": "Detail",
+          "target": ["detail"]
+        },
+        {
           "pattern": "complex",
           "name": "ComplexApp",
           "target": ["master", "detail"]
@@ -144,6 +149,11 @@
         "parametrica": {
           "id": "parametrica",
           "name": "Parametrica",
+          "level": 1
+        },
+        "detail": {
+          "id": "detail",
+          "name": "Detail",
           "level": 1
         }
       }

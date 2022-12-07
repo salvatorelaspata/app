@@ -19,6 +19,7 @@ sap.ui.define(
         debugger
         const args = oEvent.getParameter('arguments')
         console.log(args.id)
+
         this.getView().setModel(
           new sap.ui.model.json.JSONModel({
             id: args.id,

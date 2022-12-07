@@ -1,0 +1,55 @@
+<mvc:View controllerName="app.controller.Detail"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:form="sap.ui.layout.form"
+  xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+  xmlns="sap.m" displayBlock="true" height="100%" busyIndicatorDelay="0">
+  <Page id="detail" title="Pagina di dettaglio">
+    <content>
+      <Button text="Modifica General" app:section="general" icon="sap-icon://edit" press="onModifyDetail"/>
+      <Button text="Modifica Company" app:section="company" icon="sap-icon://edit" press="onModifyDetail"/>
+      <Button text="Modifica Address" app:section="address" icon="sap-icon://edit" press="onModifyDetail"/>
+      <Button text="Modifica Tutte" app:section="ALL" icon="sap-icon://edit" press="onModifyDetail"/>
+      <form:SimpleForm title="Info Generali">
+        <Text text="Pagina di dettaglio {modelloDetail>/id}" />
+        <Label text="email" />
+        <Input value="{modelloDetail>/email}" editable="{modelloDetail>/_editablegeneral}"/>
+        <Label text="id" />
+        <Input value="{modelloDetail>/id}" editable="{modelloDetail>/_editablegeneral}"/>
+        <Label text="name" />
+        <Input value="{modelloDetail>/name}" editable="{modelloDetail>/_editablegeneral}"/>
+        <Label text="phone" />
+        <Input value="{modelloDetail>/phone}" editable="{modelloDetail>/_editablegeneral}"/>
+        <Label text="username" />
+        <Input value="{modelloDetail>/username}" editable="{modelloDetail>/_editablegeneral}"/>
+        <Label text="website" />
+        <Input value="{modelloDetail>/website}" editable="{modelloDetail>/_editablegeneral}"/>
+      </form:SimpleForm>
+      <form:SimpleForm title="Company">
+        <Label text="name" />
+        <Input value="{modelloDetail>/company/name}" editable="{modelloDetail>/_editablecompany}"/>
+        <Label text="catchPhrase" />
+        <Input value="{modelloDetail>/company/catchPhrase}" editable="{modelloDetail>/_editablecompany}"/>
+        <Label text="bs" />
+        <Input value="{modelloDetail>/company/bs}" editable="{modelloDetail>/_editablecompany}"/>
+      </form:SimpleForm>
+      <form:SimpleForm title="Address">
+        <Label text="city" />
+        <Input value="{modelloDetail>/address/city}" editable="{modelloDetail>/_editableaddress}"/>
+        <Label text="street" />
+        <Input value="{modelloDetail>/address/street}" editable="{modelloDetail>/_editableaddress}"/>
+        <Label text="suite" />
+        <Input value="{modelloDetail>/address/suite}" editable="{modelloDetail>/_editableaddress}"/>
+        <Label text="zipcode" />
+        <Input value="{modelloDetail>/address/zipcode}" editable="{modelloDetail>/_editableaddress}"/>
+      </form:SimpleForm>
+      <form:SimpleForm title="TODOS">
+
+        <List >
+          <items>
+            <StandardListItem title="LISTA TODOS" type="Navigation"/>
+          </items>
+        </List>
+      </form:SimpleForm>
+    </content>
+  </Page>
+</mvc:View>

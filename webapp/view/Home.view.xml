@@ -16,6 +16,14 @@
                 <Button text="Naviga verso la parametrica passando l'id=2" app:id="2" press="onNavParametrica"/>
                 <Button text="Naviga verso la parametrica passando l'id=3" app:id="3" press="onNavParametrica"/>
             </FlexBox>
+            <FlexBox direction="Column">
+                <Title text="Tabella utenti"></Title>
+                <List items="{modelloHome>/list}" itemPress="onNavigateToDetail">
+                    <items>
+                        <StandardListItem title="{modelloHome>name}" type="Navigation"/>
+                    </items>
+                </List>
+            </FlexBox>
         </content>
     </Page>
 </mvc:View>
