@@ -1,0 +1,158 @@
+{
+  "_version": "1.48.0",
+  "sap.app": {
+    "id": "app",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.8.2",
+      "toolsId": "50b8b0fa-3939-4732-913e-31d313e1831f"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.108.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "app.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "app.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "Home",
+          "target": ["home"]
+        },
+        {
+          "pattern": "",
+          "name": "Home",
+          "target": ["home"]
+        },
+        {
+          "pattern": "split",
+          "name": "Split",
+          "target": ["split"]
+        },
+        {
+          "pattern": "another",
+          "name": "Another",
+          "target": ["another"]
+        },
+        {
+          "pattern": "parametrica/{id}",
+          "name": "Parametrica",
+          "target": ["parametrica"]
+        },
+        {
+          "pattern": "complex",
+          "name": "ComplexApp",
+          "target": ["master", "detail"]
+        }
+      ],
+      "targets": {
+        "home": {
+          "id": "home",
+          "name": "Home",
+          "level": 1
+        },
+        "split": {
+          "id": "split",
+          "name": "Split",
+          "level": 1
+        },
+        "another": {
+          "id": "another",
+          "name": "Another",
+          "level": 1
+        },
+        "parametrica": {
+          "id": "parametrica",
+          "name": "Parametrica",
+          "level": 1
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "app.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

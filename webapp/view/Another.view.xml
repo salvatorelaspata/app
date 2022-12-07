@@ -1,0 +1,11 @@
+<mvc:View controllerName="app.controller.Another"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">
+        <content>
+            <FlexBox direction="Column">
+                <Title text="Another View"/>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>

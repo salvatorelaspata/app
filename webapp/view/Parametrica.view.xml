@@ -1,0 +1,11 @@
+<mvc:View controllerName="app.controller.Parametrica"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">
+        <content>
+            <FlexBox direction="Column">
+                <Title text="Parametrica {modello>/id}" />
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>

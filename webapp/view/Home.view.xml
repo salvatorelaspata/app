@@ -1,0 +1,21 @@
+<mvc:View xmlns:core="sap.ui.core" controllerName="app.controller.Home"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">
+        <content>
+            <FlexBox direction="Column">
+                <Title text="Home View"/>
+                <Button text="Naviga verso la split" press="onNavSplit"/>
+                <Button text="Naviga verso un altra pagina" press="onNavAnother">
+                    <customData>
+                        <core:CustomData key="antaniID" value="1" writeToDom="true"></core:CustomData>
+                    </customData>
+                </Button>
+                <Button text="Naviga verso la parametrica passando l'id=1" app:id="1" press="onNavParametrica"/>
+                <Button text="Naviga verso la parametrica passando l'id=2" app:id="2" press="onNavParametrica"/>
+                <Button text="Naviga verso la parametrica passando l'id=3" app:id="3" press="onNavParametrica"/>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>
