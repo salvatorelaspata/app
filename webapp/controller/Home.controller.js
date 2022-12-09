@@ -14,6 +14,20 @@ sap.ui.define(
           .getRoute('Home')
           .attachPatternMatched(this._onRouteMatched, this)
       },
+      _fetchData: function ({ endpoint }) {
+        return new Promise((resolve, reject) => {
+          $.ajax({
+            url: `https://jsonplaceholder.typicode.com/${endpoint}`,
+            type: 'GET',
+            success: data => {
+              resolve(data)
+            },
+            error: function (err) {
+              reject(err)
+            },
+          })
+        })
+      },
       _onRouteMatched: function () {
         console.log('Home route matched')
         $.ajax({
@@ -29,6 +43,20 @@ sap.ui.define(
             console.log(err)
           },
         })
+
+        const fun1 = this._fetchData({ endpoint: 'users' })
+
+        const fun2 = this._fetchData({ endpoint: 'todos' })
+
+        console.log(fun1, fun2)
+
+        Promise.all([fun1, fun2])
+          .then(([users, todos]) => {
+            console.log({ users, todos })
+          })
+          .catch(err => {
+            console.log(err)
+          })
       },
       onNavSplit: function () {
         this.getOwnerComponent().getRouter().navTo('Split')
